@@ -63,8 +63,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBv-8l-W0F">
-                                <rect key="frame" x="16" y="20" width="37" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBv-8l-W0F">
+                                <rect key="frame" x="0.0" y="50" width="116" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="ALb-nx-dc5"/>
+                                    <constraint firstAttribute="height" constant="45" id="GaN-wG-G4v"/>
+                                </constraints>
                                 <state key="normal" title="Lions">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -72,8 +77,13 @@
                                     <action selector="onLionsButtonTapped:" destination="epl-9l-P6O" eventType="touchUpInside" id="6SF-ud-ACF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC0-Zn-wRl">
-                                <rect key="frame" x="16" y="58" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC0-Zn-wRl">
+                                <rect key="frame" x="0.0" y="105" width="116" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="RCr-WH-wyf"/>
+                                    <constraint firstAttribute="width" constant="116" id="qsa-rs-AEf"/>
+                                </constraints>
                                 <state key="normal" title="Tigers">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -82,7 +92,13 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.062745098040000002" green="0.73725490199999999" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.61960784313725492" green="0.70980392156862748" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sBv-8l-W0F" firstAttribute="top" secondItem="6Uv-hA-7JN" secondAttribute="bottom" constant="50" id="8EQ-xB-Zne"/>
+                            <constraint firstItem="DC0-Zn-wRl" firstAttribute="leading" secondItem="d7S-6a-ZlT" secondAttribute="leadingMargin" constant="-16" id="KXA-jB-2vp"/>
+                            <constraint firstItem="sBv-8l-W0F" firstAttribute="leading" secondItem="d7S-6a-ZlT" secondAttribute="leadingMargin" constant="-16" id="OKA-jL-hGG"/>
+                            <constraint firstItem="DC0-Zn-wRl" firstAttribute="top" secondItem="sBv-8l-W0F" secondAttribute="bottom" constant="10" id="qUj-vc-Ccm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxO-Pf-Pvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,7 +119,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZPU-sU-VCv">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
-                                <color key="backgroundColor" red="1" green="0.84705882349999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.67843137254901964" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nLh-wz-oeO">
                                     <size key="itemSize" width="201" height="197"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -136,6 +152,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="0.82352941180000006" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZPU-sU-VCv" firstAttribute="leading" secondItem="vkn-u6-JTA" secondAttribute="leadingMargin" constant="-16" id="DVd-FQ-1zZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZPU-sU-VCv" secondAttribute="trailing" constant="-16" id="bea-2f-cQW"/>
@@ -183,5 +200,5 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <color key="tintColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.82745098039215681" green="0.25490196078431371" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
