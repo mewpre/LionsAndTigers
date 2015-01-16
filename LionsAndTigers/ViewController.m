@@ -7,21 +7,65 @@
 //
 
 #import "ViewController.h"
+#import "TopViewController.h"
+#import "HUDViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<TopDelegate>
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *rightConstraint;
+
+@property TopViewController *tvc;
+@property HUDViewController *hvc;
+
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.tvc.delegate = self;
+    self.hvc.delegate = self.tvc;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)topRevealButtonTapped
+{
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+                        options: 0
+                     animations:^{
+                         if ([self.leftConstraint constant] == -16.0)
+                         {
+                             [self.leftConstraint setConstant:100.0];
+                             [self.rightConstraint setConstant:-116.0];
+                         }
+                         else
+                         {
+                             [self.leftConstraint setConstant:-16.0];
+                             [self.rightConstraint setConstant:-16.0];
+                         }
+                              [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished){
+                     }];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+
+    if ([segue.identifier isEqualToString:@"navigationSegue"])
+    {
+        //Since segue actually goes to the navigation controller, need to get view controller from it
+        UINavigationController *navControl = segue.destinationViewController;
+        self.tvc = [navControl.viewControllers objectAtIndex:0];
+    }
+    else if ([segue.identifier isEqualToString:@"HUDSegue"])
+    {
+        self.hvc = segue.destinationViewController;
+    }
+}
+
 
 @end
