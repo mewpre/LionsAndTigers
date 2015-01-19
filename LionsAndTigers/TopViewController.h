@@ -12,10 +12,16 @@
 
 - (void) topRevealButtonTapped;
 
+- (void) panGesture: (UIGestureRecognizer *) gesture;
+
 @end
 
 @interface TopViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property NSMutableArray *currentImageArray;
+@property NSMutableArray *lionImageArray;
+@property NSMutableArray *tigerImageArray;
 @property (nonatomic, weak) id<TopDelegate> delegate;
 
 @end

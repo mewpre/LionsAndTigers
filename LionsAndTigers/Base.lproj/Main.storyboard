@@ -45,6 +45,7 @@
                     <connections>
                         <outlet property="leftConstraint" destination="TmO-Sf-fgx" id="qCl-zM-FHv"/>
                         <outlet property="rightConstraint" destination="bYa-Qi-spb" id="HSI-PM-uC5"/>
+                        <outlet property="topViewContainer" destination="tCa-SQ-cqN" id="t2L-n1-4lp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -153,12 +154,16 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.82352941180000006" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ZPU-sU-VCv" firstAttribute="leading" secondItem="vkn-u6-JTA" secondAttribute="leadingMargin" constant="-16" id="DVd-FQ-1zZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZPU-sU-VCv" secondAttribute="trailing" constant="-16" id="bea-2f-cQW"/>
                             <constraint firstItem="1YE-WG-LSQ" firstAttribute="top" secondItem="ZPU-sU-VCv" secondAttribute="bottom" id="fPo-Lw-2Qa"/>
                             <constraint firstItem="ZPU-sU-VCv" firstAttribute="top" secondItem="zGl-AB-Xb4" secondAttribute="bottom" id="pMM-lA-f8G"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="au5-M1-TSa" appends="YES" id="001-yE-Xbk"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="6Wm-Rz-bOh">
@@ -173,6 +178,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd0-V5-Koo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="au5-M1-TSa">
+                    <connections>
+                        <action selector="panhandler:" destination="XgW-rP-5PX" id="FLI-f8-Yer"/>
+                        <outlet property="delegate" destination="XgW-rP-5PX" id="j9c-yD-DLb"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1014" y="330"/>
         </scene>

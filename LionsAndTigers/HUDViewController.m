@@ -20,15 +20,6 @@
     // Do any additional setup after loading the view.
 }
 
--(void)lionsButtonTapped
-{
-
-}
--(void)tigersButtonTapped
-{
-
-}
-
 - (IBAction)onLionsButtonTapped:(id)sender
 {
     [self.delegate lionsButtonTapped];

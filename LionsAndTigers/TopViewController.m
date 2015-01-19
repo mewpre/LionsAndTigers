@@ -10,13 +10,8 @@
 #import "ImageCollectionViewCell.h"
 #import "HUDViewController.h"
 
-@interface TopViewController () <HUDDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface TopViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
 
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-
-@property NSMutableArray *currentImageArray;
-@property NSMutableArray *lionImageArray;
-@property NSMutableArray *tigerImageArray;
 
 @end
 
@@ -38,13 +33,15 @@
     self.currentImageArray = self.lionImageArray;
 }
 
-- (void) topRevealButtonTapped
-{
-}
 
 - (IBAction)menuButtonTapped:(id)sender
 {
     [self.delegate topRevealButtonTapped];
+}
+
+- (IBAction)panhandler:(UIGestureRecognizer *)gesture
+{
+    [self.delegate panGesture:gesture];
 }
 
 -(ImageCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -57,20 +54,6 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return 3;
-}
-
--(void)lionsButtonTapped
-{
-    self.currentImageArray = self.lionImageArray;
-    [self.collectionView reloadData];
-    [self.delegate topRevealButtonTapped];
-}
-
--(void)tigersButtonTapped
-{
-    self.currentImageArray = self.tigerImageArray;
-    [self.collectionView reloadData];
-    [self.delegate topRevealButtonTapped];
 }
 
 

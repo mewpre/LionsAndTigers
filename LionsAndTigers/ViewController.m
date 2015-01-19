@@ -10,9 +10,10 @@
 #import "TopViewController.h"
 #import "HUDViewController.h"
 
-@interface ViewController ()<TopDelegate>
+@interface ViewController ()<TopDelegate, HUDDelegate>
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *rightConstraint;
+@property (strong, nonatomic) IBOutlet UIView *topViewContainer;
 
 @property TopViewController *tvc;
 @property HUDViewController *hvc;
@@ -26,7 +27,19 @@
 {
     [super viewDidLoad];
     self.tvc.delegate = self;
-    self.hvc.delegate = self.tvc;
+    self.hvc.delegate = self;
+}
+
+-(void)lionsButtonTapped
+{
+    self.tvc.currentImageArray = self.tvc.lionImageArray;
+    [self.tvc.collectionView reloadData];
+}
+
+-(void)tigersButtonTapped
+{
+    self.tvc.currentImageArray = self.tvc.tigerImageArray;
+    [self.tvc.collectionView reloadData];
 }
 
 -(void)topRevealButtonTapped
@@ -49,6 +62,11 @@
                      }
                      completion:^(BOOL finished){
                      }];
+}
+
+-(void)panGesture:(UIGestureRecognizer *)gesture
+{
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
