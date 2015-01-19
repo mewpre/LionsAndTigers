@@ -8,7 +8,7 @@
 
 #import "TopViewController.h"
 #import "ImageCollectionViewCell.h"
-#import "HUDViewController.h"
+//#import "HUDViewController.h"
 
 @interface TopViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
 
@@ -17,7 +17,8 @@
 
 @implementation TopViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     self.lionImageArray = [NSMutableArray new];
@@ -39,10 +40,10 @@
     [self.delegate topRevealButtonTapped];
 }
 
-- (IBAction)panhandler:(UIGestureRecognizer *)gesture
-{
-    [self.delegate panGesture:gesture];
-}
+//- (IBAction)panhandler:(UIGestureRecognizer *)gesture
+//{
+//    [self.delegate panGesture:gesture];
+//}
 
 -(ImageCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {

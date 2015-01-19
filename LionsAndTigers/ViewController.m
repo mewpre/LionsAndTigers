@@ -11,13 +11,13 @@
 #import "HUDViewController.h"
 
 @interface ViewController ()<TopDelegate, HUDDelegate>
+
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *rightConstraint;
 @property (strong, nonatomic) IBOutlet UIView *topViewContainer;
 
 @property TopViewController *tvc;
 @property HUDViewController *hvc;
-
 
 @end
 
@@ -34,12 +34,14 @@
 {
     self.tvc.currentImageArray = self.tvc.lionImageArray;
     [self.tvc.collectionView reloadData];
+    [self topRevealButtonTapped];
 }
 
 -(void)tigersButtonTapped
 {
     self.tvc.currentImageArray = self.tvc.tigerImageArray;
     [self.tvc.collectionView reloadData];
+    [self topRevealButtonTapped];
 }
 
 -(void)topRevealButtonTapped
@@ -51,28 +53,26 @@
                          if ([self.leftConstraint constant] == -16.0)
                          {
                              [self.leftConstraint setConstant:100.0];
-                             [self.rightConstraint setConstant:-116.0];
+                             [self.rightConstraint setConstant:-132.0];
                          }
                          else
                          {
                              [self.leftConstraint setConstant:-16.0];
                              [self.rightConstraint setConstant:-16.0];
                          }
-                              [self.view layoutIfNeeded];
+                         [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished){
                      }];
 }
 
--(void)panGesture:(UIGestureRecognizer *)gesture
-{
-
-}
+//-(void)panGesture:(UIGestureRecognizer *)gesture
+//{
+//
+//}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
-
     if ([segue.identifier isEqualToString:@"navigationSegue"])
     {
         //Since segue actually goes to the navigation controller, need to get view controller from it

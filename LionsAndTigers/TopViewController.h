@@ -11,8 +11,7 @@
 @protocol TopDelegate <NSObject>
 
 - (void) topRevealButtonTapped;
-
-- (void) panGesture: (UIGestureRecognizer *) gesture;
+//- (void) panGesture: (UIGestureRecognizer *) gesture;
 
 @end
 

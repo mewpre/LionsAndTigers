@@ -11,10 +11,10 @@
 @protocol HUDDelegate <NSObject>
 
 -(void)lionsButtonTapped;
-
 -(void)tigersButtonTapped;
 
 @end
+
 
 @interface HUDViewController : UIViewController
 
